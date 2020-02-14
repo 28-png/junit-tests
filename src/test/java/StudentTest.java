@@ -2,24 +2,26 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import static org.junit.Assert.*;
 public class StudentTest {
-   private ArrayList<Integer> grades;
+Student hasGrades;
+Student noGrades;
 
     @Before
     public void setUp() {
-        this.grades = new ArrayList<>();
+        hasGrades = new Student(1, "Matt");
 
     }
 
     @Test
-    public void testIfArrayList() {
-        int[] expected = {70, 80, 90, 100};
-        int[] output = {70, 80, 90, 100};
-        assertArrayEquals(expected, output);
+    public void TestAddMethod() {
+        hasGrades.addGrade(90);
+        assertEquals(90, hasGrades.getGradeAverage(), 0.1);
+    }
+
     }
 
 
 
-}
