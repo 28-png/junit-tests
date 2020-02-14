@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-
+import java.util.Arrays;
 
 
 public class Student {
@@ -17,7 +17,17 @@ public class Student {
         return id;
     }
 
+    public String getName() {
+        return name;
+    }
 
+    public void addGrade(int grade) {
+        grades.add(grade);
+    }
+
+    public double getAverage(int[] grades) {
+        return Arrays.stream(grades).average().orElse(Double.NaN);
+    }
 
 
 }
